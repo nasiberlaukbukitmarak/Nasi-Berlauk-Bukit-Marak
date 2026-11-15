@@ -101,7 +101,8 @@ textarea{resize:vertical;min-height:64px}
 .opt input{margin-top:4px;accent-color:var(--leaf)}
 .opt small{display:block;color:var(--muted)}
 .err{color:var(--sambal);font-size:.88rem;margin:8px 0 0;min-height:1.2em}
-.go{width:100%;margin-top:10px;border:0;border-radius:10px;padding:13px;background:var(--leaf);color:var(--leaf-fg);font-weight:700;font-size:1.05rem;cursor:pointer}
+.go{width:100%;margin-top:12px;border:0;border-radius:10px;padding:15px;background:var(--kunyit);color:var(--kunyit-fg);font-weight:800;font-family:var(--display);font-size:1.1rem;cursor:pointer;box-shadow:0 3px 0 color-mix(in srgb,var(--kunyit) 60%,#000)}
+.go:active{transform:translateY(2px);box-shadow:none}
 .go:disabled{opacity:.5;cursor:not-allowed}
 .note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
 .done{background:var(--chip);border-radius:10px;padding:14px;margin-top:12px}
@@ -130,6 +131,12 @@ input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:
 .wafab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;gap:8px;background:#157a42;color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:12px 18px;min-height:48px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
 .wafab svg{width:22px;height:22px;flex:none}
 @media (max-width:900px){.wafab{bottom:calc(76px + env(safe-area-inset-bottom,0px))}}
+.how{padding-block:28px 0}
+.how ol{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;counter-reset:s}
+.how li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 14px 14px 58px;position:relative;min-width:0;display:flex;flex-direction:column;gap:2px}
+.how li::before{content:counter(s);position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--kunyit);color:var(--kunyit-fg);font:800 1rem var(--display);display:flex;align-items:center;justify-content:center}
+.how b{font-family:var(--display);font-size:1.05rem}
+.how li span{color:var(--muted);font-size:.92rem}
 .locs{padding-block:8px 56px}
 .locgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:14px}
 .loc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -177,6 +184,15 @@ input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:
   </ul>
 </div></section>
 
+<section class="how wrap" aria-labelledby="hwt">
+  <h2 class="sec-title" id="hwt" data-i="howT"></h2>
+  <ol>
+    <li><b data-i="hw1t"></b><span data-i="hw1d"></span></li>
+    <li><b data-i="hw2t"></b><span data-i="hw2d"></span></li>
+    <li><b data-i="hw3t"></b><span data-i="hw3d"></span></li>
+    <li><b data-i="hw4t"></b><span data-i="hw4d"></span></li>
+  </ol>
+</section>
 <main class="wrap">
   <section aria-labelledby="mt">
     <h2 class="sec-title" id="mt" data-i="menu"></h2>
@@ -275,9 +291,9 @@ var T = {
     empty:"Belum ada item. Pilih dari menu.", subtotal:"Jumlah kecil", fee:"Caj hantar", free:"Percuma", total:"Jumlah",
     go:"Hantar tempahan", goPay:"Hantar tempahan & bayar", add:"Tambah", remove:"Kurangkan", plus:"Tambah satu",
     eName:"Sila isi nama.", ePhone:"Sila isi no. telefon yang sah (cth 012-345 6789).", eAddr:"Sila isi alamat penuh, poskod 5 digit, bandar dan negeri.", eDate:"Tarikh tidak sah atau tempahan hari ini dah ditutup. Sila pilih tarikh lain.", eCart:"Tambah sekurang-kurangnya satu item.", eMin:"Minimum tempahan RM",
-    doneH:"Tempahan diterima", doneP:"Salin butiran ini atau hantar terus kepada kami.", copy:"Salin", copied:"Disalin", wa:"Hantar di WhatsApp", payH:"Bayar dengan DuitNow QR", payAmt:"Jumlah perlu dibayar", payTo:"Bayar kepada", payS1:"Buka app bank atau e-wallet, pilih Imbas QR.", payS2:"Masukkan jumlah tepat dan taip no. tempahan dalam rujukan.", payS3:"Hantar tangkap layar resit di WhatsApp atau e-mel, sertakan no. tempahan.", rcpt:"Hantar resit ke", noQr:"Kod QR akan dipaparkan di sini.", qrAlt:"Kod QR DuitNow", newo:"Tempahan baru",
+    doneH:"Tempahan diterima", doneP:"Salin butiran ini atau hantar terus kepada kami.", copy:"Salin", copied:"Disalin", wa:"Hantar di WhatsApp", payH:"Bayar dengan DuitNow QR", payAmt:"Jumlah perlu dibayar", payTo:"Bayar kepada", payS1:"Buka app bank atau e-wallet, pilih Imbas QR.", payS2:"Masukkan jumlah tepat dan taip no. tempahan dalam rujukan.", payS3:"Hantar tangkap layar resit di WhatsApp, sertakan no. tempahan.", rcpt:"Hantar resit ke", noQr:"Kod QR akan dipaparkan di sini.", qrAlt:"Kod QR DuitNow", newo:"Tempahan baru",
     status_cod:"Bayaran: tunai", status_paid:"Bayaran: DuitNow QR, menunggu resit",
-    viewOrder:"Lihat tempahan",tagline:"Rasa tradisi, selera sepanjang hari!",waAsk:"Tanya kami",waMsg:"Salam, saya nak tanya tentang nasi berlauk.",savedTxt:"Butiran anda disimpan di telefon ini sahaja.",forget:"Padam",eSold:"Ada lauk yang dah habis. Sila keluarkan dari tempahan.",locT:"Lokasi Jualan",locSub:"Jumpa kami di tempat-tempat ini di sekitar Kota Bharu.",locMap:"Buka di Maps",tback:"Bukuh blako",tshop:"Kedai",troad:"Bungkus ikat tepi",locAsk:"Tanya waktu jualan di WhatsApp",soldOut:"Habis",cutNote:"Tempahan hari yang sama ditutup pukul {t}.",cutPast:"Tempahan hari ini dah ditutup. Tarikh paling awal ialah esok.",itemWord:"item",foot:"Nasi Berlauk Bukit Marak. Halal, masak segar setiap hari."},
+    viewOrder:"Lihat tempahan",howT:"Cara tempah",hw1t:"Pilih lauk",hw1d:"Tekan Tambah pada lauk yang anda mahu.",hw2t:"Isi maklumat",hw2d:"Pilih hantar atau ambil sendiri, isi alamat, kemudian tekan Hantar tempahan.",hw3t:"Bayar DuitNow QR",hw3d:"Imbas kod QR dengan app bank atau e-wallet dan bayar jumlah tepat.",hw4t:"Hantar resit",hw4d:"Hantar resit di WhatsApp. Tempahan disahkan selepas resit diterima.",tagline:"Rasa tradisi, selera sepanjang hari!",waAsk:"Tanya kami",waMsg:"Salam, saya nak tanya tentang nasi berlauk.",savedTxt:"Butiran anda disimpan di telefon ini sahaja.",forget:"Padam",eSold:"Ada lauk yang dah habis. Sila keluarkan dari tempahan.",locT:"Lokasi Jualan",locSub:"Jumpa kami di tempat-tempat ini di sekitar Kota Bharu.",locMap:"Buka di Maps",tback:"Bukuh blako",tshop:"Kedai",troad:"Bungkus ikat tepi",locAsk:"Tanya waktu jualan di WhatsApp",soldOut:"Habis",cutNote:"Tempahan hari yang sama ditutup pukul {t}.",cutPast:"Tempahan hari ini dah ditutup. Tarikh paling awal ialah esok.",itemWord:"item",foot:"Nasi Berlauk Bukit Marak. Halal, masak segar setiap hari."},
   en:{h1:"Hot <em>nasi berlauk</em>, delivered to your door.", lead:"Kampung dishes from Bukit Marak. Pick your menu, add your address, pay online, and we cook and deliver.",
     f1:"Open",f1v:"Daily, 7am - 1pm",f2:"Orders",f2v:"A day ahead, or before 12 noon",f3:"Delivery",f3v:"Kelantan RM5 (free above RM60). Outside Kelantan RM1 per pack",f4:"Pickup",f4v:"Available at Bukit Marak",
     menu:"Menu", menuSub:"Every dish is RM4.50. Tap Add to put it in your order.",
@@ -289,9 +305,9 @@ var T = {
     empty:"No items yet. Choose from the menu.", subtotal:"Subtotal", fee:"Delivery fee", free:"Free", total:"Total",
     go:"Send order", goPay:"Send order & pay", add:"Add", remove:"Remove one", plus:"Add one",
     eName:"Please enter your name.", ePhone:"Please enter a valid phone number (e.g. 012-345 6789).", eAddr:"Please enter the full address, a 5-digit postcode, city and state.", eDate:"Invalid date, or today's orders are closed. Please pick another date.", eCart:"Add at least one item.", eMin:"Minimum order is RM",
-    doneH:"Order received", doneP:"Copy these details or send them straight to us.", copy:"Copy", copied:"Copied", wa:"Send on WhatsApp", payH:"Pay with DuitNow QR", payAmt:"Amount to pay", payTo:"Pay to", payS1:"Open your bank or e-wallet app and choose Scan QR.", payS2:"Enter the exact amount and put the order no. in the reference.", payS3:"Send a screenshot of the receipt on WhatsApp or by email, with your order no.", rcpt:"Send receipt to", noQr:"The QR code will appear here.", qrAlt:"DuitNow QR code", newo:"New order",
+    doneH:"Order received", doneP:"Copy these details or send them straight to us.", copy:"Copy", copied:"Copied", wa:"Send on WhatsApp", payH:"Pay with DuitNow QR", payAmt:"Amount to pay", payTo:"Pay to", payS1:"Open your bank or e-wallet app and choose Scan QR.", payS2:"Enter the exact amount and put the order no. in the reference.", payS3:"Send a screenshot of the receipt on WhatsApp, with your order no.", rcpt:"Send receipt to", noQr:"The QR code will appear here.", qrAlt:"DuitNow QR code", newo:"New order",
     status_cod:"Payment: cash", status_paid:"Payment: DuitNow QR, awaiting receipt",
-    viewOrder:"View order",tagline:"Traditional taste, all-day cravings!",waAsk:"Ask us",waMsg:"Hi, I have a question about the nasi berlauk.",savedTxt:"Your details are saved on this phone only.",forget:"Clear",eSold:"Some dishes are sold out. Please remove them from your order.",locT:"Where to Find Us",locSub:"Catch us at these spots around Kota Bharu.",locMap:"Open in Maps",tback:"Back-of-car stall",tshop:"Shop",troad:"Roadside takeaway packs",locAsk:"Ask for selling hours on WhatsApp",soldOut:"Sold out",cutNote:"Same-day orders close at {t}.",cutPast:"Today's orders are closed. The earliest date is tomorrow.",itemWord:"items",foot:"Nasi Berlauk Bukit Marak. Halal, cooked fresh every day."}
+    viewOrder:"View order",howT:"How to order",hw1t:"Pick your dishes",hw1d:"Tap Add on the dishes you want.",hw2t:"Fill in your details",hw2d:"Choose delivery or pickup, enter your address, then tap Send order.",hw3t:"Pay with DuitNow QR",hw3d:"Scan the QR code with your bank or e-wallet app and pay the exact amount.",hw4t:"Send the receipt",hw4d:"Send the receipt on WhatsApp. Your order is confirmed once we receive it.",tagline:"Traditional taste, all-day cravings!",waAsk:"Ask us",waMsg:"Hi, I have a question about the nasi berlauk.",savedTxt:"Your details are saved on this phone only.",forget:"Clear",eSold:"Some dishes are sold out. Please remove them from your order.",locT:"Where to Find Us",locSub:"Catch us at these spots around Kota Bharu.",locMap:"Open in Maps",tback:"Back-of-car stall",tshop:"Shop",troad:"Roadside takeaway packs",locAsk:"Ask for selling hours on WhatsApp",soldOut:"Sold out",cutNote:"Same-day orders close at {t}.",cutPast:"Today's orders are closed. The earliest date is tomorrow.",itemWord:"items",foot:"Nasi Berlauk Bukit Marak. Halal, cooked fresh every day."}
 };
 var lang="ms", cat="all", cart={}, cur="";
 var $=function(s){return document.querySelector(s)};
@@ -435,7 +451,7 @@ $("#form").addEventListener("submit",function(e){
   var payBox="";
   if(pay==="duitnow"){
     var qr=CONFIG.qr?'<img src="'+CONFIG.qr+'" alt="'+t("qrAlt")+'" class="qr">':'<div class="qr ph">'+t("noQr")+'</div>';
-    payBox='<div class="paybox"><h3>'+t("payH")+'</h3>'+qr+'<div class="amt"><span>'+t("payAmt")+'</span><b>'+rm(c.total)+'</b></div><div class="amt"><span>'+t("payTo")+'</span><b>'+CONFIG.payName+'</b></div><ol><li>'+t("payS1")+'</li><li>'+t("payS2")+'</li><li>'+t("payS3")+'</li></ol><div class="amt"><span>'+t("rcpt")+'</span><b>+'+CONFIG.whatsapp+'<br>'+CONFIG.email+'</b></div></div>';
+    payBox='<div class="paybox"><h3>'+t("payH")+'</h3>'+qr+'<div class="amt"><span>'+t("payAmt")+'</span><b>'+rm(c.total)+'</b></div><div class="amt"><span>'+t("payTo")+'</span><b>'+CONFIG.payName+'</b></div><ol><li>'+t("payS1")+'</li><li>'+t("payS2")+'</li><li>'+t("payS3")+'</li></ol><div class="amt"><span>'+t("rcpt")+'</span><b>WhatsApp +'+CONFIG.whatsapp+'</b></div></div>';
   }
   $("#result").innerHTML='<div class="done"><h3>'+t("doneH")+" "+no+'</h3>'+payBox+'<div>'+t("doneP")+'</div><pre id="sum"></pre><div class="acts"><button type="button" id="cp">'+t("copy")+'</button>'+wa+'<button type="button" id="nw">'+t("newo")+'</button></div></div>';
   $("#sum").textContent=cur;
