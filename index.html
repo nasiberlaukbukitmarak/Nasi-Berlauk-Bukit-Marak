@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Nasi Berlauk Bukit Marak</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
@@ -105,10 +111,24 @@ footer{background:var(--leaf);color:var(--leaf-fg);padding-block:22px;font-size:
   main.wrap{grid-template-columns:minmax(0,1fr)}
   aside.panel{position:static}
 }
+.two>*,label.f,.opt,.opt>span{min-width:0}
+input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:none;appearance:none;min-height:42px;text-align:left}
+.cartbar{display:none}
+@media (max-width:900px){
+  main.wrap{padding-bottom:96px}
+  .cartbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;border-radius:0;background:var(--kunyit);color:var(--kunyit-fg);font-weight:700;padding:14px max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:pointer;box-shadow:0 -4px 16px rgba(0,0,0,.25)}
+  .item .btn-add,.qty button{min-height:44px}
+  .qty button{width:44px;height:44px}
+  .opt{padding:12px}
+  .cats button{min-height:40px}
+}
+@media (max-width:560px){.menu{grid-template-columns:1fr}.hero h1{font-size:2.4rem}}
 @media (max-width:420px){.two{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
+</head>
+<body>
 <header class="top"><div class="wrap">
   <div class="brand">Nasi Berlauk Bukit Marak</div>
   <div class="tools"><div class="seg" role="group" aria-label="Bahasa / Language">
@@ -185,6 +205,7 @@ footer{background:var(--leaf);color:var(--leaf-fg);padding-block:22px;font-size:
   </aside>
 </main>
 
+<button type="button" class="cartbar" id="cartbar" hidden><span id="cbn"></span><span data-i="viewOrder"></span><span id="cbt"></span></button>
 <footer><div class="wrap" data-i="foot"></div></footer>
 
 <script>
@@ -217,7 +238,7 @@ var T = {
     eName:"Sila isi nama.", ePhone:"Sila isi no. telefon yang sah (cth 012-345 6789).", eAddr:"Sila isi alamat penuh, poskod 5 digit, bandar dan negeri.", eDate:"Sila pilih tarikh hari ini atau akan datang.", eCart:"Tambah sekurang-kurangnya satu item.", eMin:"Minimum tempahan RM",
     doneH:"Tempahan diterima", doneP:"Salin butiran ini atau hantar terus kepada kami.", copy:"Salin", copied:"Disalin", wa:"Hantar di WhatsApp", payH:"Bayar dengan DuitNow QR", payAmt:"Jumlah perlu dibayar", payTo:"Bayar kepada", payS1:"Buka app bank atau e-wallet, pilih Imbas QR.", payS2:"Masukkan jumlah tepat dan taip no. tempahan dalam rujukan.", payS3:"Hantar tangkap layar resit di WhatsApp atau e-mel, sertakan no. tempahan.", rcpt:"Hantar resit ke", noQr:"Kod QR akan dipaparkan di sini.", qrAlt:"Kod QR DuitNow", newo:"Tempahan baru",
     status_cod:"Bayaran: tunai", status_paid:"Bayaran: DuitNow QR, menunggu resit",
-    foot:"Nasi Berlauk Bukit Marak. Halal, masak segar setiap hari."},
+    viewOrder:"Lihat tempahan",itemWord:"item",foot:"Nasi Berlauk Bukit Marak. Halal, masak segar setiap hari."},
   en:{h1:"Hot <em>nasi berlauk</em>, delivered to your door.", lead:"Kampung dishes from Bukit Marak. Pick your menu, add your address, pay online, and we cook and deliver.",
     f1:"Open",f1v:"Daily, 7am - 3pm",f2:"Orders",f2v:"A day ahead or same morning",f3:"Delivery",f3v:"Kelantan RM5 (free above RM60). Outside Kelantan RM1 per pack",f4:"Pickup",f4v:"Available at Bukit Marak",
     menu:"Menu", menuSub:"Every dish is RM4.50. Tap Add to put it in your order.",
@@ -231,7 +252,7 @@ var T = {
     eName:"Please enter your name.", ePhone:"Please enter a valid phone number (e.g. 012-345 6789).", eAddr:"Please enter the full address, a 5-digit postcode, city and state.", eDate:"Please pick today or a later date.", eCart:"Add at least one item.", eMin:"Minimum order is RM",
     doneH:"Order received", doneP:"Copy these details or send them straight to us.", copy:"Copy", copied:"Copied", wa:"Send on WhatsApp", payH:"Pay with DuitNow QR", payAmt:"Amount to pay", payTo:"Pay to", payS1:"Open your bank or e-wallet app and choose Scan QR.", payS2:"Enter the exact amount and put the order no. in the reference.", payS3:"Send a screenshot of the receipt on WhatsApp or by email, with your order no.", rcpt:"Send receipt to", noQr:"The QR code will appear here.", qrAlt:"DuitNow QR code", newo:"New order",
     status_cod:"Payment: cash", status_paid:"Payment: DuitNow QR, awaiting receipt",
-    foot:"Nasi Berlauk Bukit Marak. Halal, cooked fresh every day."}
+    viewOrder:"View order",itemWord:"items",foot:"Nasi Berlauk Bukit Marak. Halal, cooked fresh every day."}
 };
 var lang="ms", cat="all", cart={}, cur="";
 var $=function(s){return document.querySelector(s)};
@@ -272,6 +293,8 @@ function renderCart(){
   var c=calc();
   var feeTxt=mode()==="deliver"?(c.fee?rm(c.fee):t("free")):rm(0);
   $("#totals").innerHTML='<div class="row"><span>'+t("subtotal")+'</span><span>'+rm(c.sub)+'</span></div><div class="row"><span>'+t("fee")+'</span><span>'+(c.sub?feeTxt:rm(0))+'</span></div><div class="row grand"><span>'+t("total")+'</span><span>'+rm(c.total)+'</span></div>';
+  var nq=0; MENU.forEach(function(m){nq+=(cart[m.id]||0)});
+  $("#cbn").textContent=nq+" "+t("itemWord"); $("#cbt").textContent=rm(c.total); $("#cartbar").hidden=!nq;
   updateGo();
 }
 function renderPays(){
@@ -340,8 +363,12 @@ $("#form").addEventListener("submit",function(e){
   $("#result").scrollIntoView({block:"nearest"});
 });
 
+$("#cartbar").onclick=function(){$("#ot").scrollIntoView({behavior:"smooth",block:"start"})};
 $("#date").value=todayStr(); $("#date").min=todayStr();
 /* Contoh pesanan supaya panel nampak berfungsi */
 cart={percik:2,pedas:1};
 applyI18n();
 </script>
+
+</body>
+</html>
