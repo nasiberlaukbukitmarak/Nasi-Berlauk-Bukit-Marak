@@ -153,7 +153,9 @@ input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:
 :root[data-theme="dark"] .loc a{color:var(--kunyit)}
 .loca{margin:-4px 0 0;color:var(--muted);font-size:.92rem}
 .locnote{margin:14px 0 0}
-.locnote a{color:var(--leaf);font-weight:700}
+.locnote a{color:var(--leaf);font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline-block;padding-block:6px}
+:root[data-theme="dark"] .locnote a{color:var(--kunyit)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .locnote a{color:var(--kunyit)}}
 @media (max-width:900px){footer{padding-bottom:88px}}
 .btn-add:disabled{background:var(--chip);color:var(--muted);cursor:not-allowed}
 .cartbar{display:none}
@@ -270,7 +272,7 @@ input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:
 <a class="wafab" id="wafab" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><span id="wat"></span></a>
 <button type="button" class="cartbar" id="cartbar" hidden><span id="cbn"></span><span data-i="viewOrder"></span><span id="cbt"></span></button>
 <footer><div class="wrap foot">
-  <div class="fcol"><b>Nasi Berlauk Bukit Marak</b><span data-i="foot"></span></div>
+  <div class="fcol"><b>Nasi Berlauk Bukit Marak</b><span data-i="tagline"></span></div>
   <ul class="flinks">
     <li><a id="fwa" href="https://wa.me/60135410669" target="_blank" rel="noopener">WhatsApp 013-5410669</a></li>
     <li><a href="https://www.facebook.com/share/1CNLwDY5yH/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></li>
