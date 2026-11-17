@@ -53,22 +53,23 @@ header.top .wrap{padding-block:8px;display:flex;gap:12px;align-items:center;just
 .brand{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:.01em;display:flex;align-items:center;gap:10px;min-width:0}.bn{display:flex;flex-direction:column;gap:2px;min-width:0;line-height:1.15}.tagl{font-family:var(--body);font-weight:500;font-size:.85rem;letter-spacing:0;color:var(--kunyit)}.brand .logo{height:56px;width:auto;flex:none}
 .tools{display:flex;gap:8px}
 .seg{display:flex;border:1px solid color-mix(in srgb,var(--leaf-fg) 40%,transparent);border-radius:999px;overflow:hidden}
-.seg button{background:none;border:0;padding:6px 14px;cursor:pointer;color:var(--leaf-fg);font-weight:700}
+.seg button{background:none;border:0;padding:0 18px;min-height:44px;cursor:pointer;color:var(--leaf-fg);font-weight:700}
 .seg button[aria-pressed="true"]{background:var(--kunyit);color:var(--kunyit-fg)}
 .hero{background:var(--leaf);color:var(--leaf-fg);padding-block:18px 40px}
 .hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:end}
 .hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800}
 .hero h1 em{font-style:normal;color:var(--kunyit)}
 .hero p{max-width:46ch;margin:14px 0 0;color:color-mix(in srgb,var(--leaf-fg) 85%,transparent)}
+.cta{display:flex;align-items:center;justify-content:center;min-height:56px;margin-top:18px;max-width:340px;border-radius:12px;background:var(--kunyit);color:var(--kunyit-fg);font-weight:800;font-size:1.1rem;text-decoration:none;box-shadow:0 3px 0 rgba(0,0,0,.25)}#mt{scroll-margin-top:12px}
 .facts{display:grid;gap:8px;margin:0;padding:0;list-style:none}
 .facts li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed color-mix(in srgb,var(--leaf-fg) 35%,transparent);padding-bottom:8px;font-size:.95rem}
-.facts b{color:var(--kunyit);font-weight:700;text-align:right}
+.facts b{color:var(--leaf-fg);font-weight:500;text-align:right}.facts .hl{color:var(--kunyit);font-weight:800}
 
 main.wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;padding-block:28px 64px;align-items:start}
 .sec-title{font-size:1.5rem;margin-bottom:4px}
 .sub{color:var(--muted);margin:0 0 16px}
 .cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.cats button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;cursor:pointer}
+.cats button{min-height:44px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 16px;cursor:pointer}
 .cats button[aria-pressed="true"]{background:var(--leaf);color:var(--leaf-fg);border-color:var(--leaf)}
 .menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
 .item{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -77,7 +78,7 @@ main.wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;paddin
 .item p{margin:0;color:var(--muted);font-size:.92rem;flex:1}
 .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .price{font-weight:700;font-variant-numeric:tabular-nums}
-.tag{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;background:var(--chip);border-radius:4px;padding:2px 6px;color:var(--muted)}
+.tag{font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;background:var(--chip);border-radius:4px;padding:2px 6px;color:var(--muted)}
 .tag.hot{background:var(--sambal);color:#fff}
 .qty{display:flex;align-items:center;gap:6px}
 .qty button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:1.1rem}
@@ -87,7 +88,7 @@ main.wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;paddin
 
 aside.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;position:sticky;top:12px;min-width:0}
 aside h2{font-size:1.35rem;margin-bottom:12px}
-.step{margin:0 0 6px;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.step{margin:0 0 6px;font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .cart{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:8px}
 .cart li{display:flex;justify-content:space-between;gap:8px;font-size:.95rem}
 .cart .n{min-width:0}
@@ -97,8 +98,8 @@ aside h2{font-size:1.35rem;margin-bottom:12px}
 .totals .grand{font-weight:800;font-size:1.15rem;font-family:var(--display)}
 fieldset{border:0;padding:0;margin:14px 0 0;min-width:0}
 legend{padding:0}
-label.f{display:grid;gap:3px;margin-top:10px;font-size:.88rem;color:var(--muted)}
-input[type=text],input[type=tel],input[type=date],input[type=time],select,textarea{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:9px 10px;color:var(--fg)}
+label.f{display:grid;gap:3px;margin-top:10px;font-size:.9rem;color:var(--muted)}
+input[type=text],input[type=tel],input[type=date],input[type=time],select,textarea{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:9px 10px;min-height:46px;color:var(--fg)}
 textarea{resize:vertical;min-height:64px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .opts{display:grid;gap:8px;margin-top:6px}
@@ -106,11 +107,11 @@ textarea{resize:vertical;min-height:64px}
 .opt:has(input:checked){border-color:var(--leaf);box-shadow:0 0 0 2px var(--kunyit)}
 .opt input{margin-top:4px;accent-color:var(--leaf)}
 .opt small{display:block;color:var(--muted)}
-.err{color:var(--sambal);font-size:.88rem;margin:8px 0 0;min-height:1.2em}
+.err{color:var(--sambal);font-size:.9rem;margin:8px 0 0;min-height:1.2em}
 .go{width:100%;margin-top:12px;border:0;border-radius:10px;padding:15px;background:var(--kunyit);color:var(--kunyit-fg);font-weight:800;font-family:var(--display);font-size:1.1rem;cursor:pointer;box-shadow:0 3px 0 color-mix(in srgb,var(--kunyit) 60%,#000)}
 .go:active{transform:translateY(2px);box-shadow:none}
 .go:disabled{opacity:.5;cursor:not-allowed}
-.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.note{font-size:.9rem;color:var(--muted);margin:10px 0 0}
 .done{background:var(--chip);border-radius:10px;padding:14px;margin-top:12px}
 .done h3{font-size:1.15rem;color:var(--ok);margin-bottom:6px}
 .wabox{margin:10px 0}.wabox p{margin:0 0 8px;font-weight:700}.wabig{display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:12px;background:#157a42;color:#fff!important;font-weight:800;font-size:1.05rem;text-decoration:none!important;box-shadow:0 3px 10px rgba(0,0,0,.2)}
@@ -132,18 +133,19 @@ footer{background:var(--leaf);color:var(--leaf-fg);padding-block:22px;font-size:
 }
 .two>*,label.f,.opt,.opt>span{min-width:0}
 input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:none;appearance:none;min-height:42px;text-align:left}
-.linkbtn{background:none;border:0;padding:0;color:var(--leaf);font-weight:700;text-decoration:underline;cursor:pointer;font-size:inherit}
+.linkbtn{background:none;border:0;padding:10px 0;min-height:44px;color:var(--leaf);font-weight:700;text-decoration:underline;cursor:pointer;font-size:inherit}
 :root[data-theme="dark"] .linkbtn{color:var(--kunyit)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .linkbtn{color:var(--kunyit)}}
 .wafab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;gap:8px;background:#157a42;color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:12px 18px;min-height:48px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
 .wafab svg{width:22px;height:22px;flex:none}.wafab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.wafab{padding:0;width:52px;height:52px;justify-content:center;transition:transform .25s,opacity .25s}.wafab.away{transform:translateY(90px);opacity:0;pointer-events:none}
 @media (max-width:900px){.wafab{bottom:calc(76px + env(safe-area-inset-bottom,0px))}}
-.how{padding-block:28px 0}
+.how{padding-block:22px 0}
 .how ol{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;counter-reset:s}
 .how li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 14px 14px 58px;position:relative;min-width:0;display:flex;flex-direction:column;gap:2px}
 .how li::before{content:counter(s);position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--kunyit);color:var(--kunyit-fg);font:800 1rem var(--display);display:flex;align-items:center;justify-content:center}
 .how b{font-family:var(--display);font-size:1.05rem}
 .how li span{color:var(--muted);font-size:.92rem}
+@media (max-width:560px){.how ol{grid-template-columns:1fr 1fr;gap:8px}.how li{padding:10px 10px 10px 46px;min-height:52px;justify-content:center}.how li::before{left:10px;top:10px;width:28px;height:28px;font-size:.9rem}.how li span{display:none}.how b{font-size:.95rem;line-height:1.2}}
 .two:has(#timewrap[hidden]){grid-template-columns:1fr}
 .whenbox{background:var(--chip);border-radius:8px;padding:8px 10px;color:var(--fg)}
 .foot{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
@@ -152,7 +154,7 @@ input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:
 .loc .tag{align-self:flex-start}
 .fcol b{font-family:var(--display);font-size:1.05rem}
 .flinks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px}
-.flinks a{color:var(--kunyit);font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline-block;padding-block:8px}
+.flinks a{color:var(--kunyit);font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}
 .faq{padding-block:8px 24px}.faq details{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;padding:0 16px}.faq summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";font-size:1.3rem;line-height:1}.faq details[open] summary::after{content:"\2212"}.faq details p{margin:0 0 14px;color:var(--muted)}
 .share{padding-block:0 40px}.sharebox{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center}.sharebox h2{margin:0 0 4px;font-size:1.15rem}.sharebox p{margin:0 0 14px;color:var(--muted)}.sharebtns{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.sharebtns a,.sharebtns button{font:inherit;font-weight:700;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--leaf);background:transparent;color:var(--leaf);text-decoration:none;display:inline-flex;align-items:center;cursor:pointer}.sharebtns .sw{background:#157a42;border-color:#157a42;color:#fff}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sharebtns a:not(.sw),:root:not([data-theme="light"]) .sharebtns button{color:var(--kunyit);border-color:var(--kunyit)}}
@@ -160,12 +162,14 @@ input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:
 .addhome{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}.addhome button{font:inherit;font-weight:700;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--kunyit);background:var(--kunyit);color:#1d2a1f;cursor:pointer}.addhome p{margin:12px 0 0;color:var(--muted);font-size:.95rem}
 .locs{padding-block:8px 56px}
 .locgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:14px}
+@media (max-width:560px){.locgrid{grid-template-columns:1fr 1fr;gap:10px}.locgrid .loc{padding:12px;gap:8px}.locgrid .loc h3{font-size:1rem;line-height:1.25}.locgrid .loc .tag{align-self:flex-start;font-size:.875rem;letter-spacing:.02em;text-transform:none;font-weight:700}}
 .loc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:14px;min-width:0}.loc a{margin-top:4px;padding-top:12px;border-top:1px dashed var(--line);text-decoration:none}
 .loc h3{font-size:1.1rem}
-.loc a{color:var(--leaf);font-weight:700;text-decoration:underline;text-underline-offset:3px;min-height:24px}
+.loc a{color:var(--leaf);font-weight:700;text-decoration:underline;text-underline-offset:3px;min-height:44px;display:flex;align-items:center}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .loc a{color:var(--kunyit)}}
 :root[data-theme="dark"] .loc a{color:var(--kunyit)}
 .loca{margin:-4px 0 0;color:var(--muted);font-size:.95rem}
+small{font-size:.875rem}.locnote a,.loca a{display:inline-flex;align-items:center;min-height:44px}
 .locnote{margin:14px 0 0}
 .locnote a{color:var(--leaf);font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline-block;padding-block:6px}
 :root[data-theme="dark"] .locnote a{color:var(--kunyit)}
@@ -196,6 +200,7 @@ input[type=date],input[type=time]{min-width:0;max-width:100%;-webkit-appearance:
   <div>
     <h1 data-i="h1"></h1>
     <p data-i="lead"></p>
+    <a class="cta" href="#mt" data-i="ctaOrder"></a>
   </div>
   <ul class="facts">
     <li><span data-i="f1"></span><b data-i="f1v"></b></li>
@@ -326,7 +331,7 @@ var PAYS = [
 ];
 var T = {
   ms:{h1:"Nasi berlauk <em>panas</em>, hantar ke rumah.", lead:"Lauk kampung dari Bukit Marak. Pilih menu, isi alamat, bayar online, kami masak dan hantar.",
-    f1:"Buka",f1v:"Tempahan online 24 jam",f2:"Hantar Kelantan",f2v:"5:30 - 7:00 pagi. RM5, percuma atas RM60. Tempah sebelum 6 petang.",f3:"Luar Kelantan",f3v:"RM1 sebungkus. Transporter ambil di kedai jam 9 malam. Tempah sebelum 12 tengah hari.",f4:"Ambil sendiri",f4v:"Di kedai Bukit Marak, atau beli terus di lokasi jualan",
+    ctaOrder:"Tempah sekarang",f1:"Buka",f1v:"Tempahan online 24 jam",f2:"Hantar Kelantan",f2v:"5:30 pagi - 12:00 tengah hari. <span class=\"hl\">RM5, percuma atas RM60.</span> Tempah sebelum 6 petang.",f3:"Luar Kelantan",f3v:"<span class=\"hl\">RM1 sebungkus.</span> Transporter ambil di kedai jam 9 malam. Tempah sebelum 12 tengah hari.",f4:"Ambil sendiri",f4v:"Di kedai Bukit Marak, atau beli terus di lokasi jualan",
     menu:"Menu", menuSub:"Setiap bungkus RM4.50 (nasi + lauk). Tekan Tambah untuk masuk ke tempahan.",
     order:"Tempahan Anda", s1:"1. Pesanan", s2:"2. Cara terima", s3:"3. Maklumat anda", s4:"4. Bayaran",
     deliver:"Hantar ke alamat", deliverSub:"Rider hantar ke pintu rumah anda", pickup:"Ambil sendiri", pickupSub:"Ambil di kedai Bukit Marak. Tiada caj hantar.",
@@ -338,9 +343,9 @@ var T = {
     eName:"Sila isi nama.", ePhone:"Sila isi no. telefon yang sah (cth 012-345 6789).", eAddr:"Sila isi alamat penuh, poskod 5 digit, bandar dan negeri.", eDate:"Tarikh tidak sah. Sila pilih tarikh paling awal yang ditunjukkan, atau selepasnya.", eCart:"Tambah sekurang-kurangnya satu item.", eMin:"Minimum tempahan RM",
     ahBtn:"Pasang di skrin utama",ahIos:"Tekan butang Kongsi di bawah Safari, pilih Tambah ke Skrin Utama.",ahAnd:"Tekan menu tiga titik di Chrome, pilih Tambah ke skrin utama atau Pasang app.",shT:"Kongsi dengan kawan",shP:"Kenalkan nasi berlauk kami kepada keluarga dan kawan-kawan.",shWa:"WhatsApp",shFb:"Facebook",shMore:"Lagi...",shCp:"Salin pautan",shCopied:"Pautan disalin",shMsg:"Nasi berlauk Bukit Marak, boleh tempah online dan hantar ke rumah:",doneH:"Tempahan diterima", waLast:"Langkah akhir: hantar resit di WhatsApp supaya tempahan disahkan.", doneP:"Salin butiran ini atau hantar terus kepada kami.", copy:"Salin", copied:"Disalin", wa:"Hantar di WhatsApp", payH:"Bayar dengan DuitNow QR", payAmt:"Jumlah perlu dibayar", payTo:"Bayar kepada", payS1:"Buka app bank atau e-wallet, pilih Imbas QR.", payS2:"Masukkan jumlah tepat dan taip no. tempahan dalam rujukan.", payS3:"Hantar tangkap layar resit di WhatsApp, sertakan no. tempahan.", rcpt:"Hantar resit ke", noQr:"Kod QR akan dipaparkan di sini.", qrAlt:"Kod QR DuitNow", newo:"Tempahan baru",
     status_cod:"Bayaran: tunai", status_paid:"Bayaran: DuitNow QR, menunggu resit",
-    viewOrder:"Lihat tempahan",rate:"Nilai kami",dKel:"Tarikh hantar",dOut:"Tarikh transporter ambil",dPick:"Tarikh ambil",wKel:"Dihantar antara 5:30 pagi dan 7:00 pagi.",wOut:"Transporter kami ambil di kedai pukul 9:00 malam pada tarikh ini.",wPick:"Ambil di kedai Bukit Marak. Hantar mesej WhatsApp kalau nak sahkan waktu.",cKel:"Tempah sebelum {t} untuk dihantar pagi esok. Selepas itu, tarikh paling awal ialah lusa.",cOut:"Tempah sebelum {t} untuk diambil malam ini. Selepas itu, tarikh paling awal ialah esok.",sKel:"5:30 pagi - 7:00 pagi",sOut:"Transporter ambil 9:00 malam",howT:"Cara tempah",hw1t:"Pilih lauk",hw1d:"Tekan Tambah pada lauk yang anda mahu.",hw2t:"Isi maklumat",hw2d:"Pilih hantar atau ambil sendiri, isi alamat, kemudian tekan Hantar tempahan.",hw3t:"Bayar DuitNow QR",hw3d:"Imbas kod QR dengan app bank atau e-wallet dan bayar jumlah tepat.",hw4t:"Hantar resit",hw4d:"Hantar resit di WhatsApp. Tempahan disahkan selepas resit diterima.",tagline:"Rasa tradisi, selera sepanjang hari!",waAsk:"Tanya kami",waMsg:"Salam, saya nak tanya tentang nasi berlauk.",savedTxt:"Butiran anda disimpan di telefon ini sahaja.",forget:"Padam",eSold:"Ada lauk yang dah habis. Sila keluarkan dari tempahan.",faqT:"Soalan lazim",q1:"Boleh tempah untuk esok?",a1:"Boleh. Tempahan Kelantan sebelum 6 petang dihantar pagi esok. Selepas itu, tarikh paling awal ialah lusa.",q2:"Bayar macam mana?",a2:"Imbas kod DuitNow QR dengan app bank atau e-wallet, bayar jumlah tepat, kemudian hantar resit di WhatsApp.",q3:"Kalau lauk habis?",a3:"Lauk yang habis ditanda Habis dan tak boleh ditambah. Kami cadangkan tempah awal.",q4:"Berapa caj hantar?",a4:"Kelantan RM5, percuma untuk tempahan RM60 ke atas. Luar Kelantan RM1 sebungkus.",q5:"Boleh ambil sendiri?",a5:"Boleh, di kedai Bukit Marak, atau beli terus di lokasi jualan kami.",locT:"Lokasi Jualan",locSub:"Boleh beli terus di tempat-tempat ini di sekitar Kota Bharu, tak perlu tempah online.",locMap:"Buka di Maps",tback:"Bukuh blako",tshop:"Kedai",troad:"Bungkus ikat tepi",locAsk:"Tanya waktu jualan di WhatsApp",soldOut:"Habis",cutNote:"Tempahan hari yang sama ditutup pukul {t}.",cutPast:"Tempahan hari ini dah ditutup. Tarikh paling awal ialah esok.",itemWord:"item",foot:"Masak segar setiap hari."},
+    viewOrder:"Lihat tempahan",rate:"Nilai kami",dKel:"Tarikh hantar",dOut:"Tarikh transporter ambil",dPick:"Tarikh ambil",wKel:"Dihantar antara 5:30 pagi dan 12:00 tengah hari.",wOut:"Transporter kami ambil di kedai pukul 9:00 malam pada tarikh ini.",wPick:"Ambil di kedai Bukit Marak. Hantar mesej WhatsApp kalau nak sahkan waktu.",cKel:"Tempah sebelum {t} untuk dihantar pagi esok. Selepas itu, tarikh paling awal ialah lusa.",cOut:"Tempah sebelum {t} untuk diambil malam ini. Selepas itu, tarikh paling awal ialah esok.",sKel:"5:30 pagi - 12:00 tengah hari",sOut:"Transporter ambil 9:00 malam",howT:"Cara tempah",hw1t:"Pilih lauk",hw1d:"Tekan Tambah pada lauk yang anda mahu.",hw2t:"Isi maklumat",hw2d:"Pilih hantar atau ambil sendiri, isi alamat, kemudian tekan Hantar tempahan.",hw3t:"Bayar DuitNow QR",hw3d:"Imbas kod QR dengan app bank atau e-wallet dan bayar jumlah tepat.",hw4t:"Hantar resit",hw4d:"Hantar resit di WhatsApp. Tempahan disahkan selepas resit diterima.",tagline:"Rasa tradisi, selera sepanjang hari!",waAsk:"Tanya kami",waMsg:"Salam, saya nak tanya tentang nasi berlauk.",savedTxt:"Butiran anda disimpan di telefon ini sahaja.",forget:"Padam",eSold:"Ada lauk yang dah habis. Sila keluarkan dari tempahan.",faqT:"Soalan lazim",q1:"Boleh tempah untuk esok?",a1:"Boleh. Tempahan Kelantan sebelum 6 petang dihantar pagi esok. Selepas itu, tarikh paling awal ialah lusa.",q2:"Bayar macam mana?",a2:"Imbas kod DuitNow QR dengan app bank atau e-wallet, bayar jumlah tepat, kemudian hantar resit di WhatsApp.",q3:"Kalau lauk habis?",a3:"Lauk yang habis ditanda Habis dan tak boleh ditambah. Kami cadangkan tempah awal.",q4:"Berapa caj hantar?",a4:"Kelantan RM5, percuma untuk tempahan RM60 ke atas. Luar Kelantan RM1 sebungkus.",q5:"Boleh ambil sendiri?",a5:"Boleh, di kedai Bukit Marak, atau beli terus di lokasi jualan kami.",locT:"Lokasi Jualan",locSub:"Boleh beli terus di tempat-tempat ini di sekitar Kota Bharu, tak perlu tempah online.",locMap:"Buka di Maps",tback:"Bukuh blako",tshop:"Kedai",troad:"Bungkus ikat tepi",locAsk:"Tanya waktu jualan di WhatsApp",soldOut:"Habis",cutNote:"Tempahan hari yang sama ditutup pukul {t}.",cutPast:"Tempahan hari ini dah ditutup. Tarikh paling awal ialah esok.",itemWord:"item",foot:"Masak segar setiap hari."},
   en:{h1:"Hot <em>nasi berlauk</em>, delivered to your door.", lead:"Kampung dishes from Bukit Marak. Pick your menu, add your address, pay online, and we cook and deliver.",
-    f1:"Open",f1v:"Online orders 24 hours",f2:"Kelantan delivery",f2v:"5:30 - 7:00am. RM5, free above RM60. Order before 6pm.",f3:"Outside Kelantan",f3v:"RM1 per pack. Our transporter collects at the shop at 9pm. Order before 12 noon.",f4:"Pickup",f4v:"At the Bukit Marak shop, or buy directly at our selling spots",
+    ctaOrder:"Order now",f1:"Open",f1v:"Online orders 24 hours",f2:"Kelantan delivery",f2v:"5:30am - 12:00pm. <span class=\"hl\">RM5, free above RM60.</span> Order before 6pm.",f3:"Outside Kelantan",f3v:"<span class=\"hl\">RM1 per pack.</span> Our transporter collects at the shop at 9pm. Order before 12 noon.",f4:"Pickup",f4v:"At the Bukit Marak shop, or buy directly at our selling spots",
     menu:"Menu", menuSub:"Every pack is RM4.50 (rice + dish). Tap Add to put it in your order.",
     order:"Your Order", s1:"1. Items", s2:"2. How to receive", s3:"3. Your details", s4:"4. Payment",
     deliver:"Deliver to address", deliverSub:"A rider brings it to your door", pickup:"Self pickup", pickupSub:"Collect at the Bukit Marak shop. No delivery charge.",
@@ -352,7 +357,7 @@ var T = {
     eName:"Please enter your name.", ePhone:"Please enter a valid phone number (e.g. 012-345 6789).", eAddr:"Please enter the full address, a 5-digit postcode, city and state.", eDate:"Invalid date. Please pick the earliest date shown, or later.", eCart:"Add at least one item.", eMin:"Minimum order is RM",
     ahBtn:"Add to home screen",ahIos:"Tap the Share button in Safari, then choose Add to Home Screen.",ahAnd:"Tap the three-dot menu in Chrome, then choose Add to Home screen or Install app.",shT:"Share with friends",shP:"Tell family and friends about our nasi berlauk.",shWa:"WhatsApp",shFb:"Facebook",shMore:"More...",shCp:"Copy link",shCopied:"Link copied",shMsg:"Nasi berlauk Bukit Marak, order online and get it delivered:",doneH:"Order received", waLast:"Last step: send your receipt on WhatsApp so we can confirm your order.", doneP:"Copy these details or send them straight to us.", copy:"Copy", copied:"Copied", wa:"Send on WhatsApp", payH:"Pay with DuitNow QR", payAmt:"Amount to pay", payTo:"Pay to", payS1:"Open your bank or e-wallet app and choose Scan QR.", payS2:"Enter the exact amount and put the order no. in the reference.", payS3:"Send a screenshot of the receipt on WhatsApp, with your order no.", rcpt:"Send receipt to", noQr:"The QR code will appear here.", qrAlt:"DuitNow QR code", newo:"New order",
     status_cod:"Payment: cash", status_paid:"Payment: DuitNow QR, awaiting receipt",
-    viewOrder:"View order",rate:"Rate us",dKel:"Delivery date",dOut:"Transporter pickup date",dPick:"Pickup date",wKel:"Delivered between 5:30am and 7:00am.",wOut:"Our transporter collects from the shop at 9:00pm on this date.",wPick:"Collect at the Bukit Marak shop. Message us on WhatsApp to confirm the time.",cKel:"Order before {t} for delivery tomorrow morning. After that, the earliest date is the day after tomorrow.",cOut:"Order before {t} for collection tonight. After that, the earliest date is tomorrow.",sKel:"5:30am - 7:00am",sOut:"Transporter pickup 9:00pm",howT:"How to order",hw1t:"Pick your dishes",hw1d:"Tap Add on the dishes you want.",hw2t:"Fill in your details",hw2d:"Choose delivery or pickup, enter your address, then tap Send order.",hw3t:"Pay with DuitNow QR",hw3d:"Scan the QR code with your bank or e-wallet app and pay the exact amount.",hw4t:"Send the receipt",hw4d:"Send the receipt on WhatsApp. Your order is confirmed once we receive it.",tagline:"Traditional taste, all-day cravings!",waAsk:"Ask us",waMsg:"Hi, I have a question about the nasi berlauk.",savedTxt:"Your details are saved on this phone only.",forget:"Clear",eSold:"Some dishes are sold out. Please remove them from your order.",faqT:"FAQ",q1:"Can I order for tomorrow?",a1:"Yes. Kelantan orders before 6pm are delivered tomorrow morning. After that, the earliest date is the day after.",q2:"How do I pay?",a2:"Scan the DuitNow QR with your bank or e-wallet app, pay the exact amount, then send the receipt on WhatsApp.",q3:"What if a dish is sold out?",a3:"Sold-out dishes are marked Sold out and cannot be added. We suggest ordering early.",q4:"How much is delivery?",a4:"Kelantan RM5, free for orders of RM60 or more. Outside Kelantan RM1 per pack.",q5:"Can I pick up myself?",a5:"Yes, at the Bukit Marak shop, or buy directly at our selling spots.",locT:"Where to Find Us",locSub:"Buy directly at these spots around Kota Bharu, no online order needed.",locMap:"Open in Maps",tback:"Back-of-car stall",tshop:"Shop",troad:"Roadside takeaway packs",locAsk:"Ask for selling hours on WhatsApp",soldOut:"Sold out",cutNote:"Same-day orders close at {t}.",cutPast:"Today's orders are closed. The earliest date is tomorrow.",itemWord:"items",foot:"Cooked fresh every day."}
+    viewOrder:"View order",rate:"Rate us",dKel:"Delivery date",dOut:"Transporter pickup date",dPick:"Pickup date",wKel:"Delivered between 5:30am and 12:00pm.",wOut:"Our transporter collects from the shop at 9:00pm on this date.",wPick:"Collect at the Bukit Marak shop. Message us on WhatsApp to confirm the time.",cKel:"Order before {t} for delivery tomorrow morning. After that, the earliest date is the day after tomorrow.",cOut:"Order before {t} for collection tonight. After that, the earliest date is tomorrow.",sKel:"5:30am - 12:00pm",sOut:"Transporter pickup 9:00pm",howT:"How to order",hw1t:"Pick your dishes",hw1d:"Tap Add on the dishes you want.",hw2t:"Fill in your details",hw2d:"Choose delivery or pickup, enter your address, then tap Send order.",hw3t:"Pay with DuitNow QR",hw3d:"Scan the QR code with your bank or e-wallet app and pay the exact amount.",hw4t:"Send the receipt",hw4d:"Send the receipt on WhatsApp. Your order is confirmed once we receive it.",tagline:"Traditional taste, all-day cravings!",waAsk:"Ask us",waMsg:"Hi, I have a question about the nasi berlauk.",savedTxt:"Your details are saved on this phone only.",forget:"Clear",eSold:"Some dishes are sold out. Please remove them from your order.",faqT:"FAQ",q1:"Can I order for tomorrow?",a1:"Yes. Kelantan orders before 6pm are delivered tomorrow morning. After that, the earliest date is the day after.",q2:"How do I pay?",a2:"Scan the DuitNow QR with your bank or e-wallet app, pay the exact amount, then send the receipt on WhatsApp.",q3:"What if a dish is sold out?",a3:"Sold-out dishes are marked Sold out and cannot be added. We suggest ordering early.",q4:"How much is delivery?",a4:"Kelantan RM5, free for orders of RM60 or more. Outside Kelantan RM1 per pack.",q5:"Can I pick up myself?",a5:"Yes, at the Bukit Marak shop, or buy directly at our selling spots.",locT:"Where to Find Us",locSub:"Buy directly at these spots around Kota Bharu, no online order needed.",locMap:"Open in Maps",tback:"Back-of-car stall",tshop:"Shop",troad:"Roadside takeaway packs",locAsk:"Ask for selling hours on WhatsApp",soldOut:"Sold out",cutNote:"Same-day orders close at {t}.",cutPast:"Today's orders are closed. The earliest date is tomorrow.",itemWord:"items",foot:"Cooked fresh every day."}
 };
 var lang="ms", cat="all", cart={}, cur="";
 var $=function(s){return document.querySelector(s)};
